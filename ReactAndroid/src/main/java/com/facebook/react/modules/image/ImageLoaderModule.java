@@ -98,7 +98,9 @@ public class ImageLoaderModule extends NativeImageLoaderAndroidSpec
    */
   @ReactMethod
   public void getSize(final String uriString, final Promise promise) {
+    if (uriString != null) {
       throw new JSApplicationIllegalArgumentException("testing");
+    }
 
 
     if (uriString == null || uriString.isEmpty()) {
