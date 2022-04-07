@@ -97,7 +97,7 @@ public class ImageLoaderModule extends NativeImageLoaderAndroidSpec
   @ReactMethod
   public void getSize(final String uriString, final Promise promise) {
     if (uriString == null || uriString.isEmpty()) {
-      promise.reject(ERROR_INVALID_URI, "testing123");
+      promise.reject(ERROR_INVALID_URI, "Cannot get the size of an image for an empty URI");
       return;
     }
 
