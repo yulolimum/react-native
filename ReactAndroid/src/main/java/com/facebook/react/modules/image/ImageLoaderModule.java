@@ -35,6 +35,8 @@ import com.facebook.react.module.annotations.ReactModule;
 import com.facebook.react.modules.fresco.ReactNetworkImageRequest;
 import com.facebook.react.views.image.ReactCallerContextFactory;
 import com.facebook.react.views.imagehelper.ImageSource;
+import com.facebook.react.bridge.JSApplicationIllegalArgumentException;
+
 
 @ReactModule(name = ImageLoaderModule.NAME)
 public class ImageLoaderModule extends NativeImageLoaderAndroidSpec
@@ -96,6 +98,9 @@ public class ImageLoaderModule extends NativeImageLoaderAndroidSpec
    */
   @ReactMethod
   public void getSize(final String uriString, final Promise promise) {
+      throw new JSApplicationIllegalArgumentException("testing");
+
+
     if (uriString == null || uriString.isEmpty()) {
       promise.reject(ERROR_INVALID_URI, "Cannot get the size of an image for an empty URI");
       return;

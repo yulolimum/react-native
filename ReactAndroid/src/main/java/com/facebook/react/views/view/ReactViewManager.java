@@ -106,11 +106,11 @@ public class ReactViewManager extends ReactClippingViewManager<ReactViewGroup> {
       defaultFloat = YogaConstants.UNDEFINED)
   public void setBorderRadius(ReactViewGroup view, int index, float borderRadius) {
     if (!YogaConstants.isUndefined(borderRadius) && borderRadius < 0) {
-      borderRadius = PixelUtil.toPixelFromDIP(10);
+      borderRadius = YogaConstants.UNDEFINED;
     }
 
     if (!YogaConstants.isUndefined(borderRadius)) {
-      borderRadius = PixelUtil.toPixelFromDIP(10);
+      borderRadius = PixelUtil.toPixelFromDIP(borderRadius);
     }
 
     if (index == 0) {
